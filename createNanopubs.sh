@@ -1,5 +1,8 @@
-RELEASES="20160610 \
- 20160710 "
+RELEASES=" \
+ 20161210 \
+ 20170210 \
+ 20170310 \
+ 20170410"
 
 SUBSETS="wp1 wp2 wp3 wp4 wp5 wp6 wp7 wp8 wp9"
 
@@ -15,8 +18,7 @@ for release in ${RELEASES}; do
   unzip -n wikipathways-${release}-rdf-wp.zip
   for subset in ${SUBSETS}; do
     for pubtype in ${NANOPUBS}; do
-      echo `pwd`
-      echo "java -DOPSWPRDF=`pwd` -DSUBSETPREFIX=${subset} -Xms2G -Xmx2G -server -cp ../wikipathways.nanopubs-1-SNAPSHOT.jar nl.unimaas.bigcat.wikipathways.nanopubs.${pubtype}"
+      java -DOPSWPRDF=`pwd` -DSUBSETPREFIX=${subset} -Xms2G -Xmx2G -server -cp ../wikipathways.nanopubs-1-SNAPSHOT.jar nl.unimaas.bigcat.wikipathways.nanopubs.${pubtype}
     done
   done
   cd ..
