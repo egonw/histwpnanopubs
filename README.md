@@ -7,5 +7,7 @@ wikipathways.nanopubs-1-SNAPSHOT.jar.
 
 Run:
 
-    bash createNanopub.sh
-    tar cvf wp_nanopubs_20171210.tar 20171210/*.trig
+```shell
+bash createNanopubs.sh
+tar cvf wp_nanopubs_20171210.tar 20171210/*.trig
+```
